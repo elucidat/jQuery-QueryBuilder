@@ -602,12 +602,9 @@
     QueryBuilder.prototype.populatePagesAnswered = function( $rule, filter ) {
         var $page_container = $rule.find('.rule-page-container');
         var h = '';
-        
-        var count = 1;
-        
+                
         $.each(filter.plugin_config.pages, function(key, page) {
             h+= '<option value="'+ key +'">' + filter.plugin_config.pages_index[key] + ': ' + page[0].page_name + '</option> ';
-            count++;
         });
         
         $page_container.find('select').html( h );
