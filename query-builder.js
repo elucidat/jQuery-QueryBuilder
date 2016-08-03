@@ -365,16 +365,17 @@
                     $rule.find('.rule-operator-container select[name$=_operator]').val(rule.operator).trigger('change');
                     
                     if ( filter.plugin == 'page_filter' ) {
-                        var rule_page_id = 0;
+                        var rule_page_code = 0;
                         $.each( filter.plugin_config.pages, function( page_id, page ) {
                             $.each( page, function( index, answer ) {
                                 if ( answer.page_answer_id == rule.value ) {
-                                    rule_page_id = answer.page_id;
+                                    rule_page_code = answer.page_code;
                                 }
                             });
                         });
-                        if ( rule_page_id > 0) {
-                            $rule.find('.rule-page-container select').val(rule_page_id).trigger('change');
+                        
+                        if ( rule_page_code > 0) {
+                            $rule.find('.rule-page-container select').val(rule_page_code).trigger('change');
                         }
                     }
                     
