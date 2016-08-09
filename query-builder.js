@@ -373,8 +373,8 @@
                                 }
                             });
                         });
-                        
-                        if ( rule_page_code > 0) {
+
+                        if ( rule_page_code.length > 0) {
                             $rule.find('.rule-page-container select').val(rule_page_code).trigger('change');
                         }
                     }
